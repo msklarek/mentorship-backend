@@ -89,6 +89,17 @@ python run.py
 deactivate
 ```
 
+#### OpenSSL file linking
+If you have any issue in linking OpenSSL file so that they are discovered by Python follow the steps as listed [here](https://stackoverflow.com/a/42264168).
+
+#### Installing Python3 on Mac
+Many versions of Mac OS X still comes with Python 2. If you need to install python 3 please follow the steps listed [here](https://docs.python-guide.org/starting/install3/osx/)
+
+#### Installing OpenSSL 
+```
+brew install openssl
+```
+
 ### Run app in Windows
 
 The project runs on Python 3.
