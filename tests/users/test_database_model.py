@@ -31,7 +31,7 @@ class TestAdminUserModel(BaseTestCase):
         )
 
     def test_second_user_cannot_be_admin(self):
-        
+
         user = UserModel(
             name="User1",
             email="user1@email.com",
