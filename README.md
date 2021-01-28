@@ -17,6 +17,7 @@ This API is being used by 3 frontend projects currently being developed:
 **Table of Contents**
 
 - [Setup and run](#setup-and-run)
+    - [Run app in MAC](#run-app-in-MAC)
     - [Run app in Windows](#run-app-in-Windows)
     - [Run app in Linux](#run-app-in-Linux)
     - [Run with Docker](#run-with-docker)
@@ -33,6 +34,71 @@ To setup the project locally read these wiki pages and follow the instructions:
 
  - [Fork, Clone and Remote](https://github.com/anitab-org/mentorship-backend/wiki/Fork%2C-Clone-%26-Remote)
  - [Export Environment Variables](docs/environment-variables.md)
+
+### Run app in MAC
+
+The project runs on Python 3.
+
+1. Create a virtual environment:
+```
+virtualenv venv --python=python3
+```
+
+2. Activate the virtual environment:
+```
+source venv/bin/activate
+```
+
+3. Install all the dependencies in `requirements.txt` file:
+```
+pip install -r requirements.txt
+```
+
+4. Make sure you create `.env` using `.env.template` and update the values of corresponding environment variables
+or make sure you exported the following [environment variables](docs/environment-variables.md):
+
+```
+export FLASK_ENVIRONMENT_CONFIG=<local-or-dev-or-test-or-prod-or-stag>
+export SECRET_KEY=<your-secret-key>
+export SECURITY_PASSWORD_SALT=<your-security-password-salt>
+export MAIL_DEFAULT_SENDER=<mail-default-sender>
+export MAIL_SERVER=<mail-server>
+export APP_MAIL_USERNAME=<app-mail-username>
+export APP_MAIL_PASSWORD=<app-mail-password>
+export MOCK_EMAIL = <True-or-False>
+```
+
+If you're testing any environment other than "local", then you have to also set these other variables:
+```
+export DB_TYPE=<database_type>
+export DB_USERNAME=<database_username>
+export DB_PASSWORD=<database_password>
+export DB_ENDPOINT=<database_endpoint>
+export DB_NAME=<database_name>
+```
+
+5. Run the app:
+```
+python run.py
+```
+
+6. Navigate to http://localhost:5000 in your browser
+
+7. When you are done using the app, deactivate the virtual environment:
+```
+deactivate
+```
+
+#### OpenSSL file linking
+If you have any issue in linking OpenSSL file so that they are discovered by Python follow the steps as listed [here](https://stackoverflow.com/a/42264168).
+
+#### Installing Python3 on Mac
+Many versions of Mac OS X still comes with Python 2. If you need to install python 3 please follow the steps listed [here](https://docs.python-guide.org/starting/install3/osx/)
+
+#### Installing OpenSSL 
+```
+brew install openssl
+```
 
 ### Run app in Windows
 
